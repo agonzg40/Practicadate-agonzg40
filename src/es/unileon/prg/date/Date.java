@@ -8,6 +8,24 @@ public class Date {
 
 	public Date(int day, int month, int year) throws DateException{
 		this.year = year;
+		this.setMonth(month);
+		this.setDay(day);
+}
+
+	public void setDay(int day) throws DateException{
+		
+		if(day<1 || day>31){
+
+		throw new DateException("Mes " + month + " no valido" +
+					" Valores posibles entre 1 y 31.");
+		} else {
+			this.day = day;
+		}
+}
+
+	public void setMonth(int month) throws DateException{
+		
+
 		if (month < 1 || month > 12) {
 			throw new DateException("Mes " + month + " no valido" +
 					" Valores posibles entre 1 y 12.");
@@ -26,7 +44,53 @@ public class Date {
 		}
 }
 
+public boolean isSameYearIF(int year){
+	
+		Boolean esIgual = false;
+		
+		if(this.year == year){ //ese year es una variable local que inicializo en la signatura y tiene visibilidad local, el otro es un atributo de clase
+			esIgual = true;
 
+		}	
+	return esIgual;	
+
+	}
+	
+
+	public boolean isSameYear(int year){
+	
+		
+	return (this.year == year);
+
+	}
+
+
+	public boolean isSameMonth(int month){
+	
+	return (this.month == month);
+
+	}
+	public boolean isSameDay(int today){
+
+	today=today;
+
+	if(today!=today){
+
+	return true;
+}
+
+	return false;
+
+	}
+
+	public boolean isSame(Date fecha){
+
+	if((this.year == fecha.getYear()) && (this.month == fecha.dameMes())){
+}
+	
+	return false;
+
+	}
 
 
 	public int getDaysOfMonth(){
